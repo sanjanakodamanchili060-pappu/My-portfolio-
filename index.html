@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Kodamanchili Sanjana — B.Tech CSE student portfolio">
+<title>Sanjana | CSE Developer Portfolio</title>
+<style>
+:root{
+  --bg:#050711; --panel:rgba(15,19,38,.62); --line:rgba(255,255,255,.12);
+  --text:#f5f7ff; --muted:#aab2ca; --a:#7c5cff; --b:#00e5ff; --c:#ff4ecd;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;
+  color:var(--text); background:var(--bg); overflow-x:hidden;
+}
+body:before{
+  content:""; position:fixed; inset:0; z-index:-3;
+  background:
+    radial-gradient(circle at 15% 20%,rgba(124,92,255,.25),transparent 30%),
+    radial-gradient(circle at 85% 15%,rgba(0,229,255,.17),transparent 28%),
+    radial-gradient(circle at 50% 90%,rgba(255,78,205,.12),transparent 30%),
+    #050711;
+}
+#stars{position:fixed;inset:0;z-index:-2;opacity:.65}
+a{color:inherit;text-decoration:none}
+.container{width:min(1120px,92%);margin:auto}
+nav{
+  position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:20;
+  width:min(1050px,92%);padding:12px 16px;border:1px solid var(--line);
+  border-radius:22px;background:rgba(5,7,17,.62);backdrop-filter:blur(18px);
+  display:flex;align-items:center;justify-content:space-between;box-shadow:0 15px 50px #0005;
+}
+.logo{font-weight:900;letter-spacing:.5px}.logo span{color:var(--b)}
+.navlinks{display:flex;gap:8px;list-style:none}.navlinks a{
+  padding:9px 12px;border-radius:12px;color:var(--muted);font-size:.9rem
+}.navlinks a:hover{color:white;background:#ffffff12}
+.hero{min-height:100vh;display:grid;place-items:center;padding:130px 0 70px}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:center}
+.badge{
+  display:inline-flex;gap:9px;align-items:center;padding:8px 12px;border:1px solid #ffffff1c;
+  border-radius:999px;background:#ffffff08;color:#cfd5ea;font-size:.82rem;margin-bottom:22px
+}
+.dot{width:8px;height:8px;border-radius:50%;background:#4dffb8;box-shadow:0 0 15px #4dffb8}
+h1{font-size:clamp(3.2rem,8vw,6.8rem);line-height:.9;letter-spacing:-.07em}
+.gradient{background:linear-gradient(100deg,#fff 10%,#b8b0ff 45%,#00e5ff 90%);-webkit-background-clip:text;color:transparent}
+.hero p{font-size:1.1rem;line-height:1.8;color:var(--muted);max-width:680px;margin:25px 0}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  padding:13px 18px;border-radius:14px;border:1px solid var(--line);font-weight:800;
+  background:#ffffff0a;transition:.25s;cursor:pointer
+}
+.btn.primary{border:0;background:linear-gradient(100deg,var(--a),#4e8cff);box-shadow:0 10px 35px #6b55ff44}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 35px #0006}
+.scene{perspective:1100px;display:grid;place-items:center}
+.orb{
+  width:min(350px,70vw);aspect-ratio:1;border-radius:38% 62% 58% 42%;
+  background:linear-gradient(135deg,#7c5cff,#00e5ff 55%,#ff4ecd);
+  box-shadow:0 0 80px #6c58ff66, inset -30px -30px 70px #0005;
+  transform:rotateX(16deg) rotateY(-25deg);animation:float 5s ease-in-out infinite;
+  position:relative
+}
+.orb:after{
+  content:"SANJANA";position:absolute;inset:0;display:grid;place-items:center;
+  font-size:2rem;font-weight:1000;letter-spacing:.12em;color:#fff9;text-shadow:0 5px 25px #000
+}
+.ring{position:absolute;inset:-35px;border:1px solid #ffffff35;border-radius:50%;transform:rotateX(70deg) rotateZ(20deg)}
+.ring2{inset:-70px;transform:rotateY(70deg) rotateZ(-25deg)}
+@keyframes float{50%{transform:rotateX(20deg) rotateY(25deg) translateY(-18px)}}
+section{padding:95px 0}
+.section-title{font-size:clamp(2rem,5vw,3.5rem);letter-spacing:-.05em;margin-bottom:12px}
+.section-sub{color:var(--muted);margin-bottom:35px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{
+  background:linear-gradient(145deg,#ffffff0c,#ffffff04);border:1px solid var(--line);
+  border-radius:24px;padding:25px;backdrop-filter:blur(12px);transition:.3s;
+  transform-style:preserve-3d;min-height:190px
+}
+.card:hover{transform:translateY(-8px) rotateX(2deg) rotateY(-2deg);border-color:#ffffff35}
+.icon{font-size:2rem;margin-bottom:18px}.card h3{margin-bottom:10px}.card p{color:var(--muted);line-height:1.7}
+.skill-wrap{display:flex;flex-wrap:wrap;gap:12px}
+.skill{
+  padding:12px 16px;border:1px solid var(--line);border-radius:999px;background:#ffffff08;
+  color:#e8ebf8;box-shadow:inset 0 0 20px #ffffff03
+}
+.timeline{display:grid;gap:18px}.timeline .card{min-height:auto;display:flex;gap:18px}
+.num{font-size:1.5rem;font-weight:900;color:var(--b)}
+.contact{
+  border:1px solid var(--line);border-radius:30px;padding:45px;
+  background:linear-gradient(135deg,#7c5cff18,#00e5ff0b);text-align:center
+}
+.contact p{color:var(--muted);margin:12px auto 25px;max-width:650px;line-height:1.7}
+footer{padding:35px 0;color:#78819d;text-align:center;border-top:1px solid #ffffff0b}
+.cursor{position:fixed;width:18px;height:18px;border:1px solid #fff8;border-radius:50%;pointer-events:none;z-index:100;mix-blend-mode:difference}
+@media(max-width:800px){
+  .navlinks{display:none}.hero-grid{grid-template-columns:1fr}.scene{order:-1}
+  .grid{grid-template-columns:1fr}.hero{padding-top:120px}.orb{width:260px}
+}
+</style>
+</head>
+<body>
+<canvas id="stars"></canvas>
+<div class="cursor" id="cursor"></div>
+
+<nav>
+  <a class="logo" href="#home">S<span>S</span> • PORTFOLIO</a>
+  <ul class="navlinks">
+    <li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li>
+    <li><a href="#goals">Goals</a></li><li><a href="#journey">Journey</a></li><li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<main id="home">
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="badge"><span class="dot"></span> B.Tech CSE • 2nd Year • Building the future</div>
+      <h1>Kodamanchili<br><span class="gradient">Sanjana</span></h1>
+      <p>
+        A curious Computer Science student who enjoys learning technology, solving problems,
+        working in teams and turning ideas into useful digital experiences.
+      </p>
+      <div class="actions">
+        <a class="btn primary" href="#contact">Let's Connect ↗</a>
+        <a class="btn" href="#journey">Explore My Journey ↓</a>
+      </div>
+    </div>
+    <div class="scene">
+      <div class="orb"><div class="ring"></div><div class="ring ring2"></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <h2 class="section-title">About me</h2>
+    <p class="section-sub">Student today. Software engineer in the making.</p>
+    <div class="grid">
+      <article class="card"><div class="icon">💻</div><h3>Computer Science</h3><p>Currently pursuing B.Tech in CSE and continuously improving my programming and web-development skills.</p></article>
+      <article class="card"><div class="icon">🚀</div><h3>Hackathon Experience</h3><p>Participated in a hackathon, gaining experience in idea development, teamwork, problem-solving and presenting a solution.</p></article>
+      <article class="card"><div class="icon">🤝</div><h3>Team Player</h3><p>Strong interest in communication, collaboration and learning from people with different ideas and skills.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <h2 class="section-title">My skill set</h2>
+    <p class="section-sub">Skills I am developing throughout my B.Tech journey.</p>
+    <div class="skill-wrap">
+      <span class="skill">HTML</span><span class="skill">CSS</span><span class="skill">JavaScript</span>
+      <span class="skill">C Programming</span><span class="skill">Java</span><span class="skill">Problem Solving</span>
+      <span class="skill">Communication</span><span class="skill">Teamwork</span><span class="skill">Hard Work</span>
+      <span class="skill">Sports</span><span class="skill">Presentation</span><span class="skill">Continuous Learning</span>
+    </div>
+  </div>
+</section>
+
+<section id="goals">
+  <div class="container">
+    <h2 class="section-title">Mission: career mode</h2>
+    <p class="section-sub">Three clear directions guiding my growth.</p>
+    <div class="grid">
+      <article class="card"><div class="icon">🎯</div><h3>Short-Term Goal</h3><p>Prepare consistently and secure a good opportunity through campus placements.</p></article>
+      <article class="card"><div class="icon">👩‍💻</div><h3>Long-Term Goal</h3><p>Become a skilled and responsible software engineer who builds practical technology.</p></article>
+      <article class="card"><div class="icon">🏛️</div><h3>Another Goal</h3><p>Prepare for and pursue a suitable government job opportunity while developing my technical skills.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="journey">
+  <div class="container">
+    <h2 class="section-title">Journey log</h2>
+    <p class="section-sub">A simple roadmap of my growth.</p>
+    <div class="timeline">
+      <article class="card"><div class="num">01</div><div><h3>B.Tech CSE — 2nd Year</h3><p>Strengthening programming fundamentals, web development and core computer-science knowledge.</p></div></article>
+      <article class="card"><div class="num">02</div><div><h3>Hackathon Participant</h3><p>Worked with a team to explore an idea, solve a problem and experience the fast-paced process of a hackathon.</p></div></article>
+      <article class="card"><div class="num">03</div><div><h3>Next Level</h3><p>Build more projects, improve coding skills, prepare for placements and grow into a professional software engineer.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="contact">
+      <h2 class="section-title">Let's build something.</h2>
+      <p>I'm open to learning opportunities, project collaborations, hackathons and meaningful conversations about technology.</p>
+      <a class="btn primary" href="mailto:sanjanakodamanchili060@gmail.com">sanjanakodamanchili060@gmail.com ↗</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>© <span id="year"></span> Kodamanchili Sanjana • B.Tech CSE • Designed & built with HTML, CSS and JavaScript</footer>
+
+<script>
+const canvas=document.getElementById('stars'),ctx=canvas.getContext('2d');
+let stars=[];
+function resize(){canvas.width=innerWidth;canvas.height=innerHeight;stars=Array.from({length:Math.min(150,Math.floor(innerWidth/8))},()=>({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*1.5+.2,s:Math.random()*.25+.05}))}
+function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);ctx.fillStyle='#fff';stars.forEach(s=>{s.y+=s.s;if(s.y>canvas.height)s.y=0;ctx.globalAlpha=.25+s.r/2;ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fill()});requestAnimationFrame(draw)}
+addEventListener('resize',resize);resize();draw();
+
+const cursor=document.getElementById('cursor');
+addEventListener('mousemove',e=>{cursor.style.left=e.clientX-9+'px';cursor.style.top=e.clientY-9+'px'});
+document.querySelectorAll('.card,.orb').forEach(el=>{
+  el.addEventListener('mousemove',e=>{
+    const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+    if(el.classList.contains('card')) el.style.transform=`perspective(700px) rotateX(${-y*5}deg) rotateY(${x*5}deg) translateY(-5px)`;
+  });
+  el.addEventListener('mouseleave',()=>{if(el.classList.contains('card'))el.style.transform=''});
+});
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
